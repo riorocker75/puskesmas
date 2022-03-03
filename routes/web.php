@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// controller admin route
+use App\Http\Controllers\AdminCtrl;
+
+Route::get('/', [AdminCtrl::class,'index']);
+
+
+
