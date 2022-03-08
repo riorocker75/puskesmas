@@ -72,6 +72,11 @@ Route::get('/dashboard/rekam/edit/{id}', [AdminCtrl::class,'rekam_edit']);
 Route::post('/dashboard/rekam/update', [AdminCtrl::class,'rekam_update']);
 Route::get('/dashboard/rekam/delete/{id}', [AdminCtrl::class,'rekam_delete']);
 
+
+//data rujukan
+Route::get('/dashboard/rujukan/data', [AdminCtrl::class,'rujukan']);
+
+
 // cetak rekam kwitansi
 Route::get('/dashboard/rekam/kwitansi/{id}', [AdminCtrl::class,'cetak_kwitansi']);
 
