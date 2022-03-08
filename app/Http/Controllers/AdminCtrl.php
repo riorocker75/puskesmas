@@ -326,7 +326,10 @@ function  rekam_delete(){}
 
 // data rujukan
 function  rujukan(){
-
+   $data=Rekam::orderBy('id','asc')->where('status_rujuk','1')->get();
+        return view('admin.rujukan',[
+            'data' =>$data
+        ]);
 }
 
 
