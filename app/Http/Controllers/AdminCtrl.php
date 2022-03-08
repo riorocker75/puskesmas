@@ -81,7 +81,7 @@ class AdminCtrl extends Controller
             'status' => 1
         ]);
 
-        return redirect('/daftar/pasien')->with('alert-success','Data diri anda sudah terkirim');
+        return redirect('/dashboard/pasien/data')->with('alert-success','Data diri anda sudah terkirim');
 
     }
 
@@ -221,7 +221,23 @@ function  rekam_act(Request $request){
             ]);
 
         }else{
-           DB::table('rekam')->insert([
+            if($request->kartu_berobat == "3"){
+              DB::table('rekam')->insert([
+                    'id_pasien' => $request->pasien,
+                    'kode_rekam'=> $kode_rekam,
+                    'id_poli'=> $request->poli,
+                     'petugas' => $request->pegawai,
+                    'kartu_berobat' => $request->kartu,
+                    'tanggal' => $date,
+                    'diagnosa' => $request->diagnosa,
+                    'pengobatan' => $request->pengobatan,
+                    'tanggal_keluar' =>$request->tgl_keluar,
+                    'status_rujuk' => 0,
+                    'status' => 1
+            ]);  
+
+            }else{
+                DB::table('rekam')->insert([
                     'id_pasien' => $request->pasien,
                     'kode_rekam'=> $kode_rekam,
                     'id_poli'=> $request->poli,
@@ -234,6 +250,8 @@ function  rekam_act(Request $request){
                     'status_rujuk' => 0,
                     'status' => 1
             ]);
+            }
+           
         }
     
 
