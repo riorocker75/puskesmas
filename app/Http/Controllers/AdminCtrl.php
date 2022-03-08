@@ -86,7 +86,7 @@ class AdminCtrl extends Controller
     }
 
      function pasien_data(){
-         $data = Pasien::orderBy('id','asc')->get();
+         $data = Pasien::orderBy('id','desc')->get();
         return view('admin.pasien_data',[
             'data' =>$data
         ]);
@@ -106,7 +106,7 @@ class AdminCtrl extends Controller
     // pegawai
 
     function pegawai(){
-        $data=Pegawai::orderBy('id','asc')->get();
+        $data=Pegawai::orderBy('id','desc')->get();
         return view('admin.pegawai_data',[
             'data' =>$data
         ]);
@@ -134,7 +134,7 @@ class AdminCtrl extends Controller
     // data poli
 
 function poli(){
-    $data=Poli::orderBy('id','asc')->get();
+    $data=Poli::orderBy('id','desc')->get();
         return view('admin.poli_data',[
             'data' =>$data
         ]);
@@ -152,7 +152,7 @@ function  poli_act(Request $request){
 }
 function  poli_edit($id){
     $dpoli=Poli::where('id',$id)->get();
-       $data=Poli::orderBy('id','asc')->get();
+       $data=Poli::orderBy('id','desc')->get();
         return view('admin.poli_edit',[
             'data' =>$data,
             'poli' => $dpoli
@@ -180,7 +180,7 @@ function  poli_delete($id){
 
 // rekam medis
 function  rekam(){
-    $data=Rekam::orderBy('id','asc')->get();
+    $data=Rekam::orderBy('id','desc')->get();
         return view('admin.rekam_data',[
             'data' =>$data
         ]);
@@ -326,7 +326,7 @@ function  rekam_delete(){}
 
 // data rujukan
 function  rujukan(){
-   $data=Rekam::orderBy('id','asc')->where('status_rujuk','1')->get();
+   $data=Rekam::orderBy('id','desc')->where('status_rujuk','1')->get();
         return view('admin.rujukan',[
             'data' =>$data
         ]);
