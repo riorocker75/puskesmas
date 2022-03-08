@@ -78,7 +78,7 @@
 					</tr>
 					<tr>
 						<td><div class="lead">Sebesar</div></td>
-						<td><div class="value-big">: Rp.30.000 </div></td>
+						<td><div class="value-big">: Rp.{{number_format($dt->uang_diterima)}} </div></td>
 					</tr>
 					{{-- <tr>
 						<td><div class="lead">Uang Sejumlah:</div></td>
