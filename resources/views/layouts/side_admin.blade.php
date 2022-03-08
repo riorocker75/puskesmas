@@ -148,15 +148,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-credit-card"></i>
-              <p>
-                Pembayaran
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
+       
 
              <li class="nav-item">
             <a href="#" class="nav-link ">
