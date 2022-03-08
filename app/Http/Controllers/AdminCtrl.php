@@ -221,7 +221,7 @@ function  rekam_act(Request $request){
             ]);
 
         }else{
-            if($request->kartu_berobat == "3"){
+            if($request->kartu == "3"){
               DB::table('rekam')->insert([
                     'id_pasien' => $request->pasien,
                     'kode_rekam'=> $kode_rekam,
