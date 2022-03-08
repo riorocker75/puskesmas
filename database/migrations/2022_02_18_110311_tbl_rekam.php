@@ -16,19 +16,21 @@ class TblRekam extends Migration
         if(!Schema::hasTable('rekam')) {
             Schema::create('rekam', function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->text('kode_rekam');
+
                 $table->text('id_poli');
                 $table->text('id_pasien');
-                $table->text('username')->nullable();
+                $table->text('kartu_berobat')->nullable();
+
                 $table->dateTime('tanggal')->nullable();
                 $table->text('diagnosa')->nullable();
-                $table->text('pengobatan')->nullable();
-                $table->text('jns_pengobatan')->nullable();
+                $table->text('pengobatan')->nullable();//untuk obat
                 $table->text('petugas')->nullable();
-                $table->text('terapi')->nullable();
-                $table->text('nama_pembayar')->nullable();
+           
                 $table->text('uang_diterima')->nullable();
                 $table->dateTime('tanggal_keluar')->nullable();
-
+                $table->text('status_rujuk')->nullable();
+                $table->text('status')->nullable();
         
             });
         };

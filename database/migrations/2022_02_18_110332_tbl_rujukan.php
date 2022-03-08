@@ -16,15 +16,13 @@ class TblRujukan extends Migration
           if(!Schema::hasTable('rujukan')) {
             Schema::create('rujukan', function (Blueprint $table) {
                 $table->bigIncrements('id');
+
                     $table->text('kartu_berobat');
-                    $table->text('nama')->nullable();
-                    $table->text('umur')->nullable();
-                    $table->text('pekerjaan')->nullable();
-                    $table->text('alamat')->nullable();
+                    $table->text('id_pasien');
+                    $table->text('id_rekam');
                     $table->text('rs_tujuan')->nullable();
                     $table->text('diagnosa')->nullable();
                     $table->dateTime('tgl_surat')->nullable();
-
           
             });
         };

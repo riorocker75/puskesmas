@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pasien extends Model
 {
     use HasFactory;
-        protected $table= "pasien";
+     protected $table= "pasien";
     public $timestamps = false;
        protected $fillable =[
        'nama',
-       'no_identitas',
+       'nik',
     ];
 }

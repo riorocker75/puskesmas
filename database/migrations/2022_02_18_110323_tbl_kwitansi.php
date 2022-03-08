@@ -16,8 +16,8 @@ class TblKwitansi extends Migration
         if(!Schema::hasTable('kwitansi')) {
             Schema::create('kwitansi', function (Blueprint $table) {
                 $table->bigIncrements('id');
-                    $table->text('id_rekam');
-                $table->text('jenis')->nullable();
+                $table->text('id_rekam');
+                $table->text('kartu_berobat')->nullable();
                 $table->text('ket')->nullable();
                 $table->text('jumlah')->nullable();
             });

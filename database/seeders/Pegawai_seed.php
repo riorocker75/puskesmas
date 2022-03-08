@@ -24,5 +24,12 @@ class Pegawai_seed extends Seeder
           'tanggal_lahir' =>  Carbon::now()->format('Y-m-d'),
           'status'=> 1
         ]);
+           Pegawai::create([
+          'id' => 2,
+          'nip' => 456656568,
+          'nama' => "Nurhalimah",
+          'tanggal_lahir' =>  Carbon::now()->format('Y-m-d'),
+          'status'=> 1
+        ]);
     }
 }

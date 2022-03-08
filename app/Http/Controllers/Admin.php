@@ -16,10 +16,9 @@ class Admin extends Controller
         // });
         
     }
-     public function __invoke(Request $request){
-        return view('admin.admin');
+    function index(){
+        return view('login.login');
     }
-
 
 
 }

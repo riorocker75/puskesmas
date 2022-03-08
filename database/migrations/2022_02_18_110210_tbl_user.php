@@ -16,11 +16,9 @@ class TblUser extends Migration
         if(!Schema::hasTable('user')) {
             Schema::create('user', function (Blueprint $table) {
                 $table->bigIncrements('id');
-                $table->text('id_pegawai')->nullable();
-                $table->text('username')->nullable();
+                $table->text('username')->nullable()->comment('nip');
                 $table->text('password')->nullable();
-
-               $table->text('level')->comment('1=admin,2=pasien,3=kepala');
+               $table->text('level')->comment('1=admin,2=kepala,3=pasien');
                $table->text('status')->comment('1=aktif, 0=non');
             });
         };

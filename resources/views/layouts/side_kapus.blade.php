@@ -107,92 +107,47 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="#" class="nav-link ">
+        <li class="nav-item">
+            <a href="{{url('/kapus/pasien')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Data Master
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/dashboard/pasien/data')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Pasien</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/dashboard/pegawai/data')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Pegawai</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="{{url('/dashboard/poli/data')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Poli</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="{{url('/dashboard/rekam/data')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Rekam Medis</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/dashboard/rujukan/data')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Surat Rujukan</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-credit-card"></i>
-              <p>
-                Pembayaran
+                Pasien
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
 
-             <li class="nav-item">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+           <li class="nav-item">
+            <a href="{{url('/kapus/pegawai')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-               Profile Puskesmas
-                <i class="right fas fa-angle-left"></i>
+                Pegawai
+                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile Puskesmas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>tes1</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>tes2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>tes3</p>
-                </a>
-              </li>
-            </ul>
-             </li>
+          </li>
+
+            <li class="nav-item">
+            <a href="{{url('/kapus/poli')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Poli
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+
+            <li class="nav-item">
+            <a href="{{url('/kapus/rujukan')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Rujukan
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+
+            
           
         </ul>
       </nav>

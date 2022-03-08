@@ -17,9 +17,8 @@ class TblPasien extends Migration
             Schema::create('pasien', function (Blueprint $table) {
                 $table->bigIncrements('id');
                  $table->text('nama');
-                $table->text('no_identitas');
+                $table->text('nik');
                 $table->text('kartu_berobat')->nullable();
-               $table->text('jenis_penduduk')->nullable();
                 $table->dateTime('tanggal_lahir');
                 $table->text('tempat_lahir')->nullable();
                 $table->text('agama')->nullable();

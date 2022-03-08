@@ -93,21 +93,61 @@
         }
     }
 
-    function status_pinjaman($status){
+    function jenis_kartu($status){
         switch($status){
-            case 0:
-                echo "Menunggu Persetujuan";
-                 break;
-             case 1:
-                echo "Operator Telah Setuju";
+            case 1:
+                echo "BPJS KIS";
                  break;
              case 2:
-                echo "Operator Menolak";
+                echo "JAMSOSKES";
+                 break;
+             case 3:
+                echo "UMUM";
                  break;
              default:
                 echo "tidak ada";
                  break;
         }
     }
+
+    function agama($status){
+        switch($status){
+            case 1:
+                echo "ISLAM";
+                 break;
+             case 2:
+                echo "KRISTEN";
+                 break;
+             case 3:
+                echo "KONGHUCU";
+                 break;
+            case 4:
+                echo "LAINYA";
+                 break;
+             default:
+                echo "tidak ada";
+                 break;
+        }
+    }
+
+    function status_rujuk($status){
+         switch($status){
+            case 0:
+                echo "Tidak Rujuk";
+                 break;
+
+               case 1:
+                echo "Rujuk";
+                 break;    
+           
+             default:
+                echo "tidak ada";
+                 break;
+        }
+    }
+
+    
+
+    
 
    
