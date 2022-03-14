@@ -91,15 +91,19 @@ class AdminCtrl extends Controller
             'data' =>$data
         ]);
     }
-    function pasien_edit(){
-        
+    function pasien_edit($id){
+          $data = Pasien::where('id',$id)->get();
+        return view('admin.pasien_edit',[
+            'data' =>$data
+        ]);
     }
 
     function pasien_update(){
         
     }
     function pasien_delete(){
-        
+               Pasien::where('id',$id)->delete();
+        return redirect('/dashboard/pasien/data')->with('alert-success','Data Berhasil');  
     }
 
 
@@ -123,12 +127,70 @@ class AdminCtrl extends Controller
                 'nip' => 'required'
             ]);
 
+             $date=date('Y-m-d');
+
+         DB::table('pegawai')->insert([
+            'nama' => $request->nama,
+            'nip' =>$request->nip,
+            'jenis_kelamin' => $request->kelamin,
+            'tanggal_lahir' => $request->tgl_lhr,
+            'tempat_lahir' => $request->tmp_lhr,
+            'alamat' => $request->alamat,
+            'telepon' => $request->no_hp,
+            'jabatan' => $request->jabatan,
+            'pendidikan_nama' => $request->pendidikan,
+            'pendidikan_tahun_lulus' => $request->thn_lulus,
+            'pendidikan_tk_ijazah' => $request->pt_ijazah,
+            'pangkat' => $request->pangkat,
+            'tmt_cpns' => $request->cpns,
+            'status' => 1
+        ]);
+
+        return redirect('/dashboard/pegawai/data')->with('alert-success','Data diri anda sudah terkirim');
+
+
     }
 
-    function pegawai_edit(){}
-    function pegawai_update(){}
+    function pegawai_edit($id){
+        $data=Pegawai::where('id',$id)->get();
+        return view('admin.pegawai_edit',[
+            'data' => $data
+        ]);
+    }
+    function pegawai_update(Request $request){
+          $request->validate([
+                'nama' => 'required',
+                'nip' => 'required'
+            ]);
+            $id=$request->id;
 
-    function pegawai_delete(){}
+             $date=date('Y-m-d');
+
+         DB::table('pegawai')->where('id',$id)->update([
+            'nama' => $request->nama,
+            'nip' =>$request->nip,
+            'jenis_kelamin' => $request->kelamin,
+            'tanggal_lahir' => $request->tgl_lhr,
+            'tempat_lahir' => $request->tmp_lhr,
+            'alamat' => $request->alamat,
+            'telepon' => $request->no_hp,
+            'jabatan' => $request->jabatan,
+            'pendidikan_nama' => $request->pendidikan,
+            'pendidikan_tahun_lulus' => $request->thn_lulus,
+            'pendidikan_tk_ijazah' => $request->pt_ijazah,
+            'pangkat' => $request->pangkat,
+            'tmt_cpns' => $request->cpns,
+            'status' => 1
+        ]);
+
+        return redirect('/dashboard/pegawai/data')->with('alert-success','Data diri anda sudah terkirim');
+
+    }
+
+    function pegawai_delete($id){
+                 Pegawai::where('id',$id)->delete();
+        return redirect('/dashboard/pegawai/data')->with('alert-success','Data Berhasil');
+    }
 
 
     // data poli
@@ -367,6 +429,15 @@ function cetak_rujukan($id){
         
     }
 
+ }
+
+
+ function profile(){
+    return view('admin.profile');
+ }
+
+  function struktur(){
+    return view('admin.struktur');
  }
 
 

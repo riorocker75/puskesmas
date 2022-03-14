@@ -30,7 +30,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form action="{{ url('/daftar/pegawai/act') }}" method="post">
+                <form action="{{ url('/dashboard/pegawai/act') }}" method="post">
                        @csrf  
                        @method('POST')
                 <div class="row">
@@ -101,7 +101,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">TMT CPNS</label>
-                                <input type="text" class="form-control" name="cpns" required>
+                                <input type="date" class="form-control" name="cpns" required>
                             </div>
                  </div>
                  

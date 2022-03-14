@@ -146,6 +146,22 @@
         }
     }
 
+    function jenis_kelamin($status){
+         switch($status){
+            case 1:
+                echo "Pria";
+                 break;
+
+               case 2:
+                echo "Wanita";
+                 break;    
+           
+             default:
+                echo "tidak ada";
+                 break;
+        }
+    }
+
     
 
     

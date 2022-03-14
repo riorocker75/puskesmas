@@ -52,8 +52,8 @@
                                 <td>{{$dt->telepon}} </td>
                                 <td>{{$dt->jabatan}}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning">Ubah</a>
-                                <a href="" class="btn btn-danger">Hapus</a>
+                                    <a href="{{url('/dashboard/pegawai/edit/'.$dt->id.'')}}" class="btn btn-warning">Ubah</a>
+                                <a href="{{url('/dashboard/pegawai/delete/'.$dt->id.'')}}" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                       @endforeach

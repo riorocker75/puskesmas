@@ -54,8 +54,8 @@
                                 <td>{{jenis_kartu($dt->kartu_berobat)}} </td>
                                 <td>{{format_tanggal(date('Y-m-d',strtotime($dt->tgl_registrasi)))}}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning">Ubah</a>
-                                <a href="" class="btn btn-danger">Hapus</a>
+                                    <a href="{{url('/dashboard/pasien/edit/'.$dt->id.'')}}" class="btn btn-warning">Ubah</a>
+                                <a href="{{url('/dashboard/pasien/edit/'.$dt->id.'')}}" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                       @endforeach

@@ -160,29 +160,17 @@
             </a>
           <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link ">
+                <a href="{{url('/dashboard/profile')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile Puskesmas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{url('/dashboard/struktur')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>tes1</p>
+                  <p>Struktur</p>
                 </a>
-              </li>
-                 <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>tes2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>tes3</p>
-                </a>
-              </li>
+              
             </ul>
              </li>
           

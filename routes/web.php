@@ -41,9 +41,9 @@ Route::get('/daftar/pasien', [AdminCtrl::class,'pasien']);
 Route::post('/daftar/pasien/act', [AdminCtrl::class,'pasien_act']);
 
 Route::get('/dashboard/pasien/data', [AdminCtrl::class,'pasien_data']);
-Route::get('/dashboard/pasien/edit', [AdminCtrl::class,'pasien_edit']);
+Route::get('/dashboard/pasien/edit/{id}', [AdminCtrl::class,'pasien_edit']);
 Route::post('/dashboard/pasien/update', [AdminCtrl::class,'pasien_update']);
-Route::get('/dashboard/pasien/delete', [AdminCtrl::class,'pasien_delete']);
+Route::get('/dashboard/pasien/delete/{id}', [AdminCtrl::class,'pasien_delete']);
 
 
 // data pegawai
@@ -51,9 +51,9 @@ Route::get('/dashboard/pegawai/data', [AdminCtrl::class,'pegawai']);
 Route::get('/dashboard/pegawai/add', [AdminCtrl::class,'pegawai_add']);
 Route::post('/dashboard/pegawai/act', [AdminCtrl::class,'pegawai_act']);
 
-Route::get('/dashboard/pegawai/edit', [AdminCtrl::class,'pegawai_edit']);
+Route::get('/dashboard/pegawai/edit/{id}', [AdminCtrl::class,'pegawai_edit']);
 Route::post('/dashboard/pegawai/update', [AdminCtrl::class,'pegawai_update']);
-Route::get('/dashboard/pegawai/delete', [AdminCtrl::class,'pegawai_delete']);
+Route::get('/dashboard/pegawai/delete/{id}', [AdminCtrl::class,'pegawai_delete']);
 
 
 // Data poli
@@ -104,3 +104,6 @@ Route::get('/kapus/poli', [KapusCtrl::class,'poli']);
 // rujukan
 Route::get('/kapus/rujukan', [KapusCtrl::class,'rujukan']);
 
+// profile
+Route::get('/dashboard/profile', [AdminCtrl::class,'profile']);
+Route::get('/dashboard/struktur', [AdminCtrl::class,'struktur']);
