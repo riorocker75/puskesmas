@@ -94,14 +94,11 @@
                                 <input type="text" class="form-control" name="pt_ijazah">
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Pangkat</label>
-                                <input type="text" class="form-control" name="pangkat" required>
-                            </div>
+          
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">TMT CPNS</label>
-                                <input type="date" class="form-control" name="cpns" required>
+                                <input type="number" class="form-control" name="cpns" required>
                             </div>
                  </div>
                  

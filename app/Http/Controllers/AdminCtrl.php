@@ -141,7 +141,7 @@ class AdminCtrl extends Controller
             'pendidikan_nama' => $request->pendidikan,
             'pendidikan_tahun_lulus' => $request->thn_lulus,
             'pendidikan_tk_ijazah' => $request->pt_ijazah,
-            'pangkat' => $request->pangkat,
+            // 'pangkat' => $request->pangkat,
             'tmt_cpns' => $request->cpns,
             'status' => 1
         ]);
@@ -178,7 +178,7 @@ class AdminCtrl extends Controller
             'pendidikan_nama' => $request->pendidikan,
             'pendidikan_tahun_lulus' => $request->thn_lulus,
             'pendidikan_tk_ijazah' => $request->pt_ijazah,
-            'pangkat' => $request->pangkat,
+            // 'pangkat' => $request->pangkat,
             'tmt_cpns' => $request->cpns,
             'status' => 1
         ]);
@@ -433,11 +433,22 @@ function cetak_rujukan($id){
 
 
  function profile(){
-    return view('admin.profile');
+    return view('admin.v_profile');
  }
 
   function struktur(){
-    return view('admin.struktur');
+    return view('admin.v_struktur');
+ }
+
+   function pelayanan(){
+    return view('admin.v_pelayanan');
+ }
+    function visimisi(){
+    return view('admin.v_visimisi');
+ }
+
+   function galeri(){
+    return view('admin.v_galeri');
  }
 
 

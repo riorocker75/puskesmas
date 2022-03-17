@@ -27,8 +27,7 @@ class TblPegawai extends Migration
                 $table->text('pendidikan_nama')->nullable();
                 $table->text('pendidikan_tahun_lulus')->nullable();
                 $table->text('pendidikan_tk_ijazah')->nullable();
-                $table->text('pangkat')->nullable();
-               $table->dateTime('tmt_cpns')->nullable();
+               $table->text('tmt_cpns')->nullable();
                $table->text('status')->comment('1=aktif, 0=non')->nullable();
             });
         };

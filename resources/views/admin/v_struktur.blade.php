@@ -25,7 +25,7 @@
       <div class="container-fluid">
          <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Profile</h3>
+                <h3 class="card-title">Struktur </h3>
                 <div class="float-right">
                 </div>
               </div>

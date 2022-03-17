@@ -106,4 +106,8 @@ Route::get('/kapus/rujukan', [KapusCtrl::class,'rujukan']);
 
 // profile
 Route::get('/dashboard/profile', [AdminCtrl::class,'profile']);
+Route::get('/dashboard/pelayanan', [AdminCtrl::class,'pelayanan']);
+Route::get('/dashboard/visi-misi', [AdminCtrl::class,'visimisi']);
+
 Route::get('/dashboard/struktur', [AdminCtrl::class,'struktur']);
+Route::get('/dashboard/galeri', [AdminCtrl::class,'galeri']);

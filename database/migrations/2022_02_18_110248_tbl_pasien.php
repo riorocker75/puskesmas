@@ -38,6 +38,6 @@ class TblPasien extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('pasien');
+      Schema::dropIfExists('pasien');
     }
 }

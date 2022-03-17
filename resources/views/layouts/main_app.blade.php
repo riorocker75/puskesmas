@@ -15,6 +15,11 @@
 <link rel="stylesheet" href="{{asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/jqvmap/jqvmap.min.css')}}">
+<link rel="stylesheet" href="{{asset('dist/css/cetak.css')}}">
+<link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
+
+<link rel="stylesheet" href="{{asset('plugins/ekko-lightbox/ekko-lightbox.css')}}">
+
 
 {{-- databales --}}
   <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -99,6 +104,10 @@
 <script src="{{asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
 <script src="{{asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
 
+<script src="{{asset('plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<script src="{{asset('plugins/filterizr/jquery.filterizr.min.js')}}"></script>
+
+
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
@@ -134,5 +143,22 @@
       "responsive": true,
     });
   });
+</script>
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
 </script>
 </html>

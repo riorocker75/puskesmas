@@ -25,13 +25,13 @@
       <div class="container-fluid">
          <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Profile Puskesmas</h3>
+                <h3 class="card-title">Visi dan Misi</h3>
                 <div class="float-right">
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <img src="{{url('/logo/visi_misi.png')}}" alt="">
+                <img src="{{url('/logo/visimisi.png')}}" alt="">
               </div>
               <!-- /.card-body -->
       </section>   

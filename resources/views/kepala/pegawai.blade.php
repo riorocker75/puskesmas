@@ -50,7 +50,6 @@
                                 <td>{{$dt->nama}} </td>
                                 <td>{{$dt->telepon}} </td>
                                 <td>{{$dt->jabatan}}</td>
-                               
                             </tr>
                       @endforeach
                  

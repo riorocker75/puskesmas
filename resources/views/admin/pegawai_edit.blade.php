@@ -98,14 +98,10 @@
                                 <input type="text" class="form-control" name="pt_ijazah"  value="{{$dt->pendidikan_tk_ijazah}}">
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Pangkat</label>
-                                <input type="text" class="form-control" name="pangkat"  value="{{$dt->pangkat}}"required>
-                            </div>
-
+            
                             <div class="form-group">
                                 <label for="exampleInputEmail1">TMT CPNS</label>
-                                <input type="date" class="form-control" name="cpns" value="{{date('Y-m-d',strtotime($dt->tmt_cpns))}}" required>
+                                <input type="number" class="form-control" name="cpns" value="{{$dt->tmt_cpns}}" required>
                             </div>
                  </div>
                  

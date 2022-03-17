@@ -159,10 +159,17 @@
               </p>
             </a>
           <ul class="nav nav-treeview">
+              
               <li class="nav-item">
-                <a href="{{url('/dashboard/profile')}}" class="nav-link ">
+                <a href="{{url('/dashboard/pelayanan')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile Puskesmas</p>
+                  <p>Pelayanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('/dashboard/visi-misi')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Visi Misi</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -171,8 +178,15 @@
                   <p>Struktur</p>
                 </a>
               
+              </li>
+               <li class="nav-item">
+                <a href="{{url('/dashboard/galeri')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri</p>
+                </a>
+              
+              </li>
             </ul>
-             </li>
           
         </ul>
       </nav>
