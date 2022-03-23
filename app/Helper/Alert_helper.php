@@ -162,6 +162,22 @@
         }
     }
 
+    function role_user($level){
+         switch($level){
+            case 1:
+                echo "Admin";
+                 break;
+
+               case 2:
+                echo "Kepala Puskesmas";
+                 break;    
+           
+             default:
+                echo "tidak ada";
+                 break;
+        }
+    }
+
     
 
     

@@ -17,6 +17,7 @@ use App\Models\Kwitansi;
 use App\Models\Pegawai;
 use App\Models\Poli;
 use App\Models\User;
+use App\Models\Admin;
 
 
 
@@ -450,6 +451,75 @@ function cetak_rujukan($id){
    function galeri(){
     return view('admin.v_galeri');
  }
+
+
+ function role(){
+     $data=Admin::orderBy('id','asc')->get();
+     return view('admin.r_role_data',[
+         'data' =>$data
+     ]);
+ }
+
+  function role_edit($id){
+     $data_user=Admin::where('id',$id)->first();
+     $data=Admin::orderBy('id','asc')->get();
+
+     return view('admin.r_role_data',[
+         'data' =>$data,
+         'd_user' =>$data_user
+     ]);
+ }
+
+  function role_update(Request $request){
+    $request->validate([
+         'pegawai' => 'required',
+         'role' => 'required',
+    ]);
+
+    if($request->role == 1){
+        Admin::where('level',1)->update([
+            'username' => $request->pegawai,
+            'password' => bcrypt($request->pegawai)
+        ]);
+    }elseif($request->role == 2){
+        Admin::where('level',2)->update([
+            'username' => $request->pegawai,
+            'password' => bcrypt($request->pegawai)
+        ]);
+    }
+
+     return redirect('/dashboard/role/data')->with('alert-success','Data sudah berubah');
+
+ }
+
+
+ function pengaturan(){
+     $username= Session::get('adm_username');
+    $data= Admin::where('username',$username)->first();
+    return view('admin.pengaturan',[
+        'data'=> $data
+    ]);
+
+ }
+
+  function pengaturan_update(Request $request){
+     $username= Session::get('adm_username');
+   
+     if($request->password == ""){
+        return redirect('/dashboard')->with('alert-success','Tidak Ada perubahan');
+     }else{
+         Admin::where('level','1')->update([
+             'password' =>bcrypt($request->password)
+         ]);
+        return redirect('/dashboard/pengaturan/update')->with('alert-success','Password telah berubah');
+
+     }
+
+ }
+
+
+
+
 
 
 }

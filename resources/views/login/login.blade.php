@@ -13,23 +13,25 @@
 <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 
 <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css?v=3.2.0')}}">
+<link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
 
 
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('dist/js/custom.js')}}"></script>
 
 </head>
 <body class=" login-page">
-    
+    {{show_alert()}}
 <div class="login-box">
-  <div class="login-logo">
-    <a href=""><b>Masuk</b></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
+ <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a  class="h1"><b>Selamat Datang</b></a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Sistem Informasi Puskesmas</p>
 
     <form action="{{ url('/login/cek') }}" method="post">
         @csrf  

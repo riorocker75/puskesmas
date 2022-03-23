@@ -146,6 +146,13 @@
                   <p>Data Surat Rujukan</p>
                 </a>
               </li>
+
+                <li class="nav-item">
+                <a href="{{url('/dashboard/role/data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Role</p>
+                </a>
+              </li>
             </ul>
           </li>
        
@@ -187,6 +194,12 @@
               
               </li>
             </ul>
+             <li class="nav-item">
+                <a href="{{url('/dashboard/pengaturan/data')}}" class="nav-link ">
+                 <i class="fa fa-lock nav-icon" aria-hidden="true"></i>
+                  <p> Ganti Password</p>
+                </a>
+              </li>
           
         </ul>
       </nav>

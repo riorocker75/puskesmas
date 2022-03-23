@@ -18,6 +18,7 @@ use App\Models\Kwitansi;
 use App\Models\Pegawai;
 use App\Models\Poli;
 use App\Models\User;
+use App\Models\Admin;
 
 class KapusCtrl extends Controller
 {
@@ -64,6 +65,28 @@ class KapusCtrl extends Controller
         ]);
     }
 
+    function pengaturan(){
+        $username= Session::get('kp_username');
+        $data= Admin::where('username',$username)->first();
+        return view('kepala.pengaturan',[
+            'data'=> $data
+        ]);
+
+    }
+
+     function pengaturan_update(Request $request){
+   
+        if($request->password == ""){
+            return redirect('/dashboard/kapus')->with('alert-success','Tidak Ada perubahan');
+        }else{
+            Admin::where('level','2')->update([
+                'password' =>bcrypt($request->password)
+            ]);
+            return redirect('/kapus/pengaturan/update')->with('alert-success','Password telah berubah');
+
+        }
+
+    }
 
 
 

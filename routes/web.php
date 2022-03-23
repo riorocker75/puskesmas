@@ -111,3 +111,21 @@ Route::get('/dashboard/visi-misi', [AdminCtrl::class,'visimisi']);
 
 Route::get('/dashboard/struktur', [AdminCtrl::class,'struktur']);
 Route::get('/dashboard/galeri', [AdminCtrl::class,'galeri']);
+
+
+// role 
+Route::get('/dashboard/role/data', [AdminCtrl::class,'role']);
+Route::post('/dashboard/role/act', [AdminCtrl::class,'role_act']);
+
+Route::get('/dashboard/role/edit/{id}', [AdminCtrl::class,'role_edit']);
+Route::post('/dashboard/role/update', [AdminCtrl::class,'role_update']);
+
+// profile ubah password
+Route::get('/dashboard/pengaturan/data', [AdminCtrl::class,'pengaturan']);
+Route::post('/dashboard/pengaturan/update', [AdminCtrl::class,'pengaturan_update']);
+
+
+Route::get('/kapus/pengaturan/data', [KapusCtrl::class,'pengaturan']);
+Route::post('/kapus/pengaturan/update', [KapusCtrl::class,'pengaturan_update']);
+
+
