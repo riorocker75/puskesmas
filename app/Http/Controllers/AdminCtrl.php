@@ -511,7 +511,7 @@ function cetak_rujukan($id){
          Admin::where('level','1')->update([
              'password' =>bcrypt($request->password)
          ]);
-        return redirect('/dashboard/pengaturan/update')->with('alert-success','Password telah berubah');
+        return redirect('/dashboard/pengaturan/data')->with('alert-success','Password telah berubah');
 
      }
 

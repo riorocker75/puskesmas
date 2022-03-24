@@ -82,7 +82,7 @@ class KapusCtrl extends Controller
             Admin::where('level','2')->update([
                 'password' =>bcrypt($request->password)
             ]);
-            return redirect('/kapus/pengaturan/update')->with('alert-success','Password telah berubah');
+            return redirect('/kapus/pengaturan/data')->with('alert-success','Password telah berubah');
 
         }
 
