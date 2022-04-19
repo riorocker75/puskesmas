@@ -90,6 +90,12 @@
                   <p>Data Pasien</p>
                 </a>
               </li>
+               <li class="nav-item">
+                <a href="{{url('/dashboard/dokter/data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Dokter</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{url('/dashboard/pegawai/data')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

@@ -96,14 +96,33 @@
           </li>
 
             <li class="nav-item">
-            <a href="{{url('/kapus/poli')}}" class="nav-link">
+            <a href="{{url('/kapus/dokter')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Poli
+                Dokter
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
+
+              <li class="nav-item">
+            <a href="{{url('/kapus/kunjungan')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Kunjungan Pasien
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+{{-- 
+            <li class="nav-item">
+            <a href="{{url('/kapus/poli')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Poli
+              </p>
+            </a>
+          </li> --}}
 
             <li class="nav-item">
             <a href="{{url('/kapus/rujukan')}}" class="nav-link">

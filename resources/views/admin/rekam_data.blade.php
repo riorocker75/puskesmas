@@ -38,7 +38,7 @@
                     <th>No</th>
                     <th>Nama Paisen</th>
                     <th>NIK</th>
-                    <th>Poli</th>
+                    <th>Poli & Dokter</th>
                     <th>Jenis Berobat</th>
                     <th>Diagnosa</th>
 
@@ -57,7 +57,7 @@
                             $pasien=App\Models\Pasien::where('id',$dt->id_pasien)->first();
                             $poli=App\Models\Poli::where('id',$dt->id_poli)->first();
                             $pegawai=App\Models\Pegawai::where('id',$dt->petugas)->first();
-                            
+                            $dokter=App\Models\Dokter::where('id',$dt->id_dokter)->first();
                         @endphp
 
                            <tr>
@@ -67,7 +67,9 @@
                                   <td>{{$pasien->nama}}</td>
                                   <td>{{$pasien->nik}}</td>
 
-                                  <td>{{$poli->prosedur}}</td>
+                                  <td>{{$poli->prosedur}}
+                                  <br> {{$dokter->nama}}
+                                  </td>
                                   <td>{{jenis_kartu($dt->kartu_berobat)}} </td>
                                   <td>{{$dt->diagnosa}}</td>
                               

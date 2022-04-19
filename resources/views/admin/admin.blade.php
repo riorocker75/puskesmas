@@ -26,6 +26,7 @@
             $jlh_pasien= App\Models\Pasien::where('status',1)->count();; 
             $jlh_rekam= App\Models\Rekam::where('status',1)->count();;   
             $jlh_rujuk= App\Models\Rujukan::all()->count();;   
+            $jlh_dokter= App\Models\Dokter::all()->count();;   
 
         @endphp
       <div class="container-fluid">
@@ -73,6 +74,22 @@
                         <i class="fa fa-book" aria-hidden="true"></i>
                         </div>
                         <a href="{{url('/dashboard/rujuk/data')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{$jlh_dokter}}</h3>
+
+                            <p>Dokter</p>
+                        </div>
+                        <div class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <a href="{{url('/dashboard/dokter/data')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
          </div>

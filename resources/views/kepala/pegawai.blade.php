@@ -27,7 +27,8 @@
          <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Data semua Pegawai</h3>
-                     <a href="" class="btn btn-primary float-right" onclick="window:print();">Cetak</a>
+                <a href="{{url('/kapus/cetak/pegawai')}}" class="btn btn-default float-right"><i class="fa fa-print" aria-hidden="true"></i> Cetak</a>
+                    
               </div>
               <!-- /.card-header -->
               <div class="card-body">

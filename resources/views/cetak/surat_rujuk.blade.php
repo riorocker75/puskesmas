@@ -89,6 +89,23 @@
 	border-top: 1px solid #000;
 }
 
+.ttd{
+    width:280px;
+    position: absolute;
+    right: 80px;
+    height: 160px;
+    margin: 50px 0;
+}
+.ttd-atas{
+    text-align: center
+}
+.ttd-bawah{
+   margin-top:80px;
+    
+    text-align: center!important;
+
+}
+
 </style>
 </head>
 
@@ -174,7 +191,25 @@
         </tbody>
 
     </table>
+    <div style="margin-top:20px;line-heigt:1">
 
+        <p>Mohon dilakukan perawatan lebih lanjut.</p>
+        <span>Demikian, atas perhatian dan kerjasamanya kami ucapkan terima kasih</span>
+    </div>
+
+
+
+    <div class="ttd">
+        <div class="ttd-atas">
+            Semadam Asal, {{format_tanggal(date('Y-m-d',strtotime($dt->tgl_surat)))}} <br>
+            <span>Kepala UPTD Puskesmas Suka Makmur</span>
+        </div>
+        <div class="ttd-bawah">
+
+            <span style="font-weight: 700;text-decoration: underline;" >RAHMAWATI, SKM</span>
+            <span>NIP.19800226200212003</span>
+        </div>
+    </div>
     </div>
    
 

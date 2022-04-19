@@ -18,6 +18,8 @@ use App\Models\Pegawai;
 use App\Models\Poli;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Dokter;
+
 
 
 
@@ -144,6 +146,8 @@ class AdminCtrl extends Controller
             'pendidikan_tk_ijazah' => $request->pt_ijazah,
             // 'pangkat' => $request->pangkat,
             'tmt_cpns' => $request->cpns,
+            'tanggal' => date('Y-m-d'),
+
             'status' => 1
         ]);
 
@@ -192,6 +196,76 @@ class AdminCtrl extends Controller
                  Pegawai::where('id',$id)->delete();
         return redirect('/dashboard/pegawai/data')->with('alert-success','Data Berhasil');
     }
+
+
+    // data dokter
+    function dokter(){
+        $data=Dokter::orderBy('id','desc')->get();
+        return view('admin.dokter_data',[
+            'data' => $data
+        ]);
+    }
+    function dokter_add(){
+        return view('admin.dokter_add');
+    }
+    function dokter_act(Request $request){
+            $request->validate([
+                'nama' => 'required',
+                'nip' => 'required'
+            ]);
+
+             $date=date('Y-m-d');
+
+         DB::table('dokter')->insert([
+            'nama' => $request->nama,
+            'nip' =>$request->nip,
+            'jenis_kelamin' => $request->kelamin,
+            'tanggal_lahir' => $request->tgl_lhr,
+            'tempat_lahir' => $request->tmp_lhr,
+            'alamat' => $request->alamat,
+            'telepon' => $request->no_hp,
+            'poli' => $request->poli,
+            'tanggal' =>$date,
+            'status' => 1
+        ]);
+        return redirect('/dashboard/dokter/data')->with('alert-success','Data Berhasil disimpan');
+
+    }
+    function dokter_edit($id){
+        $data=Dokter::where('id',$id)->get();
+        return view('admin.dokter_edit',[
+            'data' => $data
+        ]);
+    }
+    function dokter_update(Request $request){
+        $request->validate([
+                'nama' => 'required',
+                'nip' => 'required'
+            ]);
+            $id=$request->id;
+             $date=date('Y-m-d');
+
+         DB::table('dokter')->where('id',$id)->update([
+            'nama' => $request->nama,
+            'nip' =>$request->nip,
+            'jenis_kelamin' => $request->kelamin,
+            'tanggal_lahir' => $request->tgl_lhr,
+            'tempat_lahir' => $request->tmp_lhr,
+            'alamat' => $request->alamat,
+            'telepon' => $request->no_hp,
+            'poli' => $request->poli,
+        ]);
+        return redirect('/dashboard/dokter/data')->with('alert-success','Data Berhasil diubah');
+
+    }
+    function dokter_delete($id){
+        Dokter::where('id',$id)->delete();
+        return redirect('/dashboard/dokter/data')->with('alert-success','Data Berhasil terhapus');
+
+    }
+
+
+
 
 
     // data poli
@@ -263,6 +337,8 @@ function  rekam_act(Request $request){
 
              DB::table('rekam')->insert([
                     'id_pasien' => $request->pasien,
+                    'id_dokter' => $request->dokter,
+
                     'kode_rekam'=> $kode_rekam,
                     'id_poli'=> $request->poli,
                     'petugas' => $request->pegawai,
@@ -287,6 +363,8 @@ function  rekam_act(Request $request){
             if($request->kartu == "3"){
               DB::table('rekam')->insert([
                     'id_pasien' => $request->pasien,
+                    'id_dokter' => $request->dokter,
+
                     'kode_rekam'=> $kode_rekam,
                     'id_poli'=> $request->poli,
                      'petugas' => $request->pegawai,
@@ -303,6 +381,8 @@ function  rekam_act(Request $request){
             }else{
                 DB::table('rekam')->insert([
                     'id_pasien' => $request->pasien,
+                    'id_dokter' => $request->dokter,
+
                     'kode_rekam'=> $kode_rekam,
                     'id_poli'=> $request->poli,
                      'petugas' => $request->pegawai,
@@ -336,8 +416,8 @@ function  rekam_update(Request $request){
             'pasien' => 'required',
     ]);
     $kode_rekam=$request->kode_rekam;
-    $data_rujuk=App\Models\Rekam::where('kode_rekam',$kode_rekam)->first();
-
+    $data_rujuk=Rekam::where('kode_rekam',$kode_rekam)->first();
+    $date=date('Y-m-d');
 
     if($data_rujuk->status_rujuk == "0"){
         if($request->cek_rujuk == "1"){
@@ -345,6 +425,8 @@ function  rekam_update(Request $request){
 
              DB::table('rekam')->where('kode_rekam',$kode_rekam)->update([
                     'id_pasien' => $request->pasien,
+                    'id_dokter' => $request->dokter,
+
                     'id_poli'=> $request->poli,
                     'petugas' => $request->pegawai,
                     'kartu_berobat' => $request->kartu,
@@ -363,7 +445,7 @@ function  rekam_update(Request $request){
             ]);
 
         }else{
-           DB::table('rekam')->insert([
+              DB::table('rekam')->where('kode_rekam',$kode_rekam)->update([
                     'id_pasien' => $request->pasien,
                     'id_poli'=> $request->poli,
                      'petugas' => $request->pegawai,

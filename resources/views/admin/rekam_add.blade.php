@@ -63,6 +63,21 @@
                                     </select>
                                 </div>
 
+                                 <div class="form-group">
+                                    <label>Dokter Penanggung Jawab</label>
+                                    <select class="form-control select2" style="width: 100%;" name="dokter" required>
+                                        <option selected value="">Cari Nip Dokter</option>
+                                        @php
+                                            $dokter= \App\Models\Dokter::get();
+                                        @endphp
+                                        @foreach ($dokter as $dr)
+                                        @php
+                                            $poli_dokter=App\Models\Poli::where('id',$dr->poli)->first();
+                                        @endphp
+                                         <option value="{{$dr->id}}">{{$dr->nama}} {{$dr->nip}} || {{$poli_dokter->prosedur}}</option>
+                                        @endforeach
+                                    </select>
+                               </div>
                                    <div class="form-group">
                                     <label>Poli</label>
                                     <select class="form-control select2" style="width: 100%;" name="poli" required>

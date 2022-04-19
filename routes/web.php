@@ -56,6 +56,17 @@ Route::post('/dashboard/pegawai/update', [AdminCtrl::class,'pegawai_update']);
 Route::get('/dashboard/pegawai/delete/{id}', [AdminCtrl::class,'pegawai_delete']);
 
 
+
+// data dokter
+Route::get('/dashboard/dokter/data', [AdminCtrl::class,'dokter']);
+Route::get('/dashboard/dokter/add', [AdminCtrl::class,'dokter_add']);
+Route::post('/dashboard/dokter/act', [AdminCtrl::class,'dokter_act']);
+
+Route::get('/dashboard/dokter/edit/{id}', [AdminCtrl::class,'dokter_edit']);
+Route::post('/dashboard/dokter/update', [AdminCtrl::class,'dokter_update']);
+Route::get('/dashboard/dokter/delete/{id}', [AdminCtrl::class,'dokter_delete']);
+
+
 // Data poli
 Route::get('/dashboard/poli/data', [AdminCtrl::class,'poli']);
 Route::post('/dashboard/poli/act', [AdminCtrl::class,'poli_act']);
@@ -92,10 +103,19 @@ Route::post('/ajax/cek_rujuk', [AdminCtrl::class,'cek_rujuk']);
 // cetak pasien
 Route::get('/dashboard/kapus', [KapusCtrl::class,'index']);
 Route::get('/kapus/pasien', [KapusCtrl::class,'pasien']);
-Route::post('/kapus/pasien/cetak', [KapusCtrl::class,'pasien_cetak']);
+Route::get('/kapus/cetak/pasien', [KapusCtrl::class,'cetak_pasien']);
 
 // pegwai
 Route::get('/kapus/pegawai', [KapusCtrl::class,'pegawai']);
+Route::get('/kapus/cetak/pegawai', [KapusCtrl::class,'cetak_pegawai']);
+
+// Dokter
+Route::get('/kapus/dokter', [KapusCtrl::class,'dokter']);
+Route::get('/kapus/cetak/dokter', [KapusCtrl::class,'cetak_dokter']);
+
+// kunjungan pasien
+Route::get('/kapus/kunjungan', [KapusCtrl::class,'kunjungan']);
+Route::get('/kapus/cetak/kunjungan', [KapusCtrl::class,'cetak_kunjungan']);
 
 
 // poli
@@ -103,6 +123,7 @@ Route::get('/kapus/poli', [KapusCtrl::class,'poli']);
 
 // rujukan
 Route::get('/kapus/rujukan', [KapusCtrl::class,'rujukan']);
+Route::get('/kapus/cetak/rujukan', [KapusCtrl::class,'cetak_rujukan']);
 
 // profile
 Route::get('/dashboard/profile', [AdminCtrl::class,'profile']);
@@ -111,6 +132,8 @@ Route::get('/dashboard/visi-misi', [AdminCtrl::class,'visimisi']);
 
 Route::get('/dashboard/struktur', [AdminCtrl::class,'struktur']);
 Route::get('/dashboard/galeri', [AdminCtrl::class,'galeri']);
+
+
 
 
 // role 

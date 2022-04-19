@@ -19,6 +19,7 @@ use App\Models\Pegawai;
 use App\Models\Poli;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Dokter;
 
 class KapusCtrl extends Controller
 {
@@ -42,14 +43,46 @@ class KapusCtrl extends Controller
             'data' =>$data
         ]);
     }
+    function cetak_pasien(){
+        $year=date('Y');
+          $data=Pasien::whereYear('tgl_registrasi',$year)->orderBy('id','asc')->get();
+            return view('cetak.cetak_pasien',[
+                'data' =>$data
+            ]);
+    }
+
 
 
       function pegawai(){
-        $data=Pegawai::orderBy('id','asc')->get();
-        return view('kepala.pegawai',[
-            'data' =>$data
-        ]);
-    }
+            $data=Pegawai::orderBy('id','asc')->get();
+            return view('kepala.pegawai',[
+                'data' =>$data
+            ]);
+        }
+        function cetak_pegawai(){
+             $year=date('Y');
+          $data=Pegawai::whereYear('tanggal',$year)->orderBy('id','asc')->get();
+            return view('cetak.cetak_pegawai',[
+                'data' =>$data
+            ]);
+        }
+
+
+         function dokter(){
+            $data=Dokter::orderBy('id','asc')->get();
+            return view('kepala.dokter',[
+                'data' =>$data
+            ]);
+        }
+
+        function cetak_dokter(){
+              $year=date('Y');
+          $data=Dokter::whereYear('tanggal',$year)->orderBy('id','asc')->get();
+            return view('cetak.cetak_dokter',[
+                'data' =>$data
+            ]);
+        }
+
 
       function poli(){
         $data=Poli::orderBy('id','asc')->get();
@@ -60,10 +93,33 @@ class KapusCtrl extends Controller
 
       function rujukan(){
         $data=Rekam::orderBy('id','asc')->where('status_rujuk','1')->get();
-        return view('kepala.rujukan',[
+            return view('kepala.rujukan',[
+                'data' =>$data
+            ]);
+        }
+        function cetak_rujukan(){
+            $year=date('Y');
+                $data=Rekam::whereYear('tanggal',$year)->get();
+                return view('cetak.cetak_rujukan',[
+                    'data'=> $data
+                ]);
+
+        }
+
+        function kunjungan(){
+        $data=Rekam::orderBy('id','asc')->get();
+        return view('kepala.kunjungan',[
             'data' =>$data
         ]);
     }
+        function cetak_kunjungan(){
+            $year=date('Y');
+             $data=Rekam::whereYear('tanggal',$year)->get();
+            return view('cetak.cetak_kunjungan',[
+                'data'=> $data
+            ]);
+        } 
+
 
     function pengaturan(){
         $username= Session::get('kp_username');

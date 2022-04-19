@@ -62,7 +62,9 @@
 						<td><div class="value"></div></td>
 					</tr> --}}
                      @php
-      
+						$poli=App\Models\Poli::where('id',$dt->id_poli)->first();
+						$dokter=App\Models\Dokter::where('id',$dt->id_dokter)->first();
+
                     @endphp
 					<tr>
 						<td><div class="lead">Kartu Berobat</div></td>
@@ -71,6 +73,16 @@
 					<tr>
 						<td><div class="lead">Keteragan</div></td>
 						<td><div class="value-big">: {{$dt->diagnosa}}</div></td>
+					</tr>
+
+					<tr>
+						<td><div class="lead">Poli</div></td>
+						<td><div class="value-big">: {{$poli->prosedur}}</div></td>
+					</tr>
+
+					<tr>
+						<td><div class="lead">Dokter</div></td>
+						<td><div class="value-big">: {{$dokter->nama}}</div></td>
 					</tr>
 					<tr>
 						<td><div class="lead">Tanggal</div></td>

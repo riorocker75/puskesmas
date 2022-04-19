@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Pasien</h1>
+            <h1 class="m-0">Data Dokter</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Pasien</li>
+              <li class="breadcrumb-item active">Data Dokter</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -26,10 +26,8 @@
       <div class="container-fluid">
          <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data semua Pasien</h3>
-                <div class="float-right">
-                     <a href="{{url('/kapus/cetak/pasien')}}" class="btn btn-default" ><i class="fa fa-print" aria-hidden="true"></i> Cetak</a>
-                </div>
+                <h3 class="card-title">Data semua Dokter</h3>
+                <a href="{{url('/dashboard/dokter/add')}}" class="btn btn-primary float-right">Tambah data</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -37,23 +35,32 @@
                   <thead>
                   <tr>
                     <th>No</th>
+                    <th>NIP</th>
                     <th>Nama</th>
-                    <th>NIK</th>
-                    <th>Jenis Berobat</th>
-                    <th>Tanggal registrasi</th>
-              
+                    <th>Telepon</th>
+                    <th>Alamat</th>
+                    <th>Poli</th>
+                    <th>Edit</th>
                   </tr>
                   </thead>
                   <tbody>
                       <?php $no=1; ?>
                       @foreach ($data as $dt)
+                      @php
+                          $poli=App\Models\Poli::where('id',$dt->poli)->first()
+                      @endphp
                            <tr>
                                 <td>{{$no++}}</td>
-                                <td>{{$dt->nama}}</td>
-                                <td>{{$dt->nik}} </td>
-                                <td>{{jenis_kartu($dt->kartu_berobat)}} </td>
-                                <td>{{format_tanggal(date('Y-m-d',strtotime($dt->tgl_registrasi)))}}</td>
-                             
+                                <td>{{$dt->nip}}</td>
+                                <td>{{$dt->nama}} </td>
+                                <td>{{$dt->telepon}} </td>
+                                <td>{{$dt->alamat}}</td>
+                                <td>{{$poli->prosedur}}</td>
+
+                                <td>
+                                    <a href="{{url('/dashboard/dokter/edit/'.$dt->id.'')}}" class="btn btn-warning">Ubah</a>
+                                <a href="{{url('/dashboard/dokter/delete/'.$dt->id.'')}}" class="btn btn-danger">Hapus</a>
+                                </td>
                             </tr>
                       @endforeach
                  

@@ -20,6 +20,8 @@ class TblRekam extends Migration
 
                 $table->text('id_poli');
                 $table->text('id_pasien');
+                $table->text('id_dokter');
+
                 $table->text('kartu_berobat')->nullable();
 
                 $table->dateTime('tanggal')->nullable();

@@ -41,7 +41,7 @@
 
                         <div class="col-lg-6">
                                <div class="form-group">
-                                   <input type="text" name="kode_rekam" value="{{$dt->kode_rekam}}" hidden>
+                                   <input type="text" name="kode_rekam" value="{{$dt->kode_rekam}}" >
                                     <label>Pasien</label>
                                     <select class="form-control select2" style="width: 100%;" name="pasien" required>
                                         @php
@@ -79,6 +79,29 @@
                                             
                                         @endforeach
                                       
+                                    </select>
+                               </div>
+
+                               <div class="form-group">
+                                    <label>Dokter Penanggung Jawab</label>
+                                    <select class="form-control select2" style="width: 100%;" name="dokter" required>
+                                        @php
+                                            $dokter= \App\Models\Dokter::where('id',$dt->id_dokter)->first();
+                                            $cek_pd=App\Models\Poli::where('id',$dokter->poli)->first();
+                                        @endphp
+                                      
+                                         <option value="{{$dokter->id}}" selected>{{$dokter->nama}} {{$dokter->nip}} || {{$cek_pd->prosedur}}</option>
+                                        @php
+                                            $Dokters= \App\Models\Dokter::get();
+                                        @endphp
+                                        @foreach ($Dokters as $drs)
+                                        @php
+                                            $poli_dokter=App\Models\Poli::where('id',$drs->poli)->first();
+                                            
+                                        @endphp
+                                        <option value="{{$drs->id}}">{{$drs->nama}} {{$drs->nip}} || {{$poli_dokter->prosedur}}</option>
+                                            
+                                        @endforeach
                                     </select>
                                </div>
 
