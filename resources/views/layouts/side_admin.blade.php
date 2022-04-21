@@ -121,6 +121,13 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="{{url('/dashboard/kunjungan/data')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Kunjungan Pasien</p>
+                </a>
+              </li>
+
                 <li class="nav-item">
                 <a href="{{url('/dashboard/role/data')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

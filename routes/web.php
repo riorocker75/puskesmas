@@ -86,6 +86,13 @@ Route::get('/dashboard/rekam/delete/{id}', [AdminCtrl::class,'rekam_delete']);
 
 //data rujukan
 Route::get('/dashboard/rujukan/data', [AdminCtrl::class,'rujukan']);
+Route::get('/dashboard/cetak/rujukan', [AdminCtrl::class,'cetak_rujukan_data']);
+
+
+// kunjungan pasien
+Route::get('/dashboard/kunjungan/data', [AdminCtrl::class,'kunjungan']);
+Route::get('/dashboard/cetak/kunjungan', [AdminCtrl::class,'cetak_kunjungan']);
+
 
 
 // cetak rekam kwitansi

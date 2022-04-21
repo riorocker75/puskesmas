@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Dashboard </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -20,7 +20,11 @@
 
 
     </div>  
-    
+     <div style="text-align:center;margin:30px 0">
+
+    <img src="{{url('/logo/pancabudi.png')}}" style="width:120px;height:120px" alt="" srcset="">&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="{{url('/logo/logo.png')}}" style="width:120px;height:120px" alt="" srcset="">
+  </div>
     <section class="content">
         @php
             $jlh_pasien= App\Models\Pasien::where('status',1)->count();; 

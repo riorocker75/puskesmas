@@ -514,6 +514,30 @@ function cetak_rujukan($id){
 
  }
 
+    function cetak_rujukan_data(){
+            $year=date('Y');
+                $data=Rekam::whereYear('tanggal',$year)->get();
+                return view('cetak.cetak_rujukan',[
+                    'data'=> $data
+                ]);
+
+        }
+
+        function kunjungan(){
+        $data=Rekam::orderBy('id','asc')->get();
+        return view('admin.kunjungan',[
+            'data' =>$data
+        ]);
+    }
+        function cetak_kunjungan(){
+            $year=date('Y');
+             $data=Rekam::whereYear('tanggal',$year)->get();
+            return view('cetak.cetak_kunjungan',[
+                'data'=> $data
+            ]);
+        } 
+
+
 
  function profile(){
     return view('admin.v_profile');
