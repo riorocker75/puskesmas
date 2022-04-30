@@ -40,16 +40,13 @@
                        @csrf  
                        @method('POST')
                      <div class="form-group">
-                            <label>Pegawai</label>
-                            <select class="form-control select2" style="width: 100%;" name="pegawai" required>
-                                <option selected value="">Cari NIP Pegawai</option>
-                                @php
-                                    $pegawai= \App\Models\Pegawai::get();
-                                @endphp
-                                @foreach ($pegawai as $pg)
-                                    <option value="{{$pg->nip}}">{{$pg->nama}} {{$pg->nip}}</option>
-                                @endforeach
-                            </select>
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username">
+                    </div>
+
+                      <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password">
                     </div>
 
                     <div class="form-group">
@@ -61,7 +58,7 @@
                             </select>
                     </div>
 
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="submit" class="btn btn-primary">Tambah Role</button>
                 </form>
               </div>
               <!-- /.card-body -->
@@ -80,6 +77,8 @@
                     <th>No</th>
                     <th>Username</th>
                     <th>Role</th>
+                    <th>Aksi</th>
+
                   </tr>
                   </thead>
                   <tbody>
@@ -89,6 +88,11 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$dt->username}}</td>
                                 <td>{{role_user($dt->level)}}</td>
+                                <td>
+                                  <a href="{{url('/dashboard/role/delete/'.$dt->id.'')}}" class="btn btn-danger">Hapus</a>
+
+                                </td>
+
                             </tr>
                       @endforeach
                  

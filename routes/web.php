@@ -149,6 +149,7 @@ Route::post('/dashboard/role/act', [AdminCtrl::class,'role_act']);
 
 Route::get('/dashboard/role/edit/{id}', [AdminCtrl::class,'role_edit']);
 Route::post('/dashboard/role/update', [AdminCtrl::class,'role_update']);
+Route::get('/dashboard/role/delete/{id}', [AdminCtrl::class,'role_delete']);
 
 // profile ubah password
 Route::get('/dashboard/pengaturan/data', [AdminCtrl::class,'pengaturan']);

@@ -578,25 +578,45 @@ function cetak_rujukan($id){
 
   function role_update(Request $request){
     $request->validate([
-         'pegawai' => 'required',
+         'username' => 'required',
+         'password' => 'required',
          'role' => 'required',
     ]);
+    $cek_admin=Admin::where('level',1)->count();
+    $cek_kapus=Admin::where('level',2)->count();
 
-    if($request->role == 1){
-        Admin::where('level',1)->update([
-            'username' => $request->pegawai,
-            'password' => bcrypt($request->pegawai)
+    if($cek_admin < 3 && $cek_kapus < 1){
+        if($request->role == 1){
+            Admin::insert([
+                'username' => $request->username,
+                'password' => bcrypt($request->password),
+                'level' => 1,
+                'status' => 1,
+            ]);
+         }elseif($request->role == 2){
+        Admin::insert([
+             'username' => $request->username,
+            'password' => bcrypt($request->password),
+            'level' => 2,
+            'status' => 1
         ]);
-    }elseif($request->role == 2){
-        Admin::where('level',2)->update([
-            'username' => $request->pegawai,
-            'password' => bcrypt($request->pegawai)
-        ]);
+     return redirect('/dashboard/role/data')->with('alert-success','data telah berhasil ditambahkan');
+
     }
+    }else{
 
-     return redirect('/dashboard/role/data')->with('alert-success','Data sudah berubah');
+     return redirect('/dashboard/role/data')->with('alert-success','maaf data sudah maksimal');
+
+    }
+    
+ }
+
+ function role_delete($id){
+     Admin::where('id',$id)->delete();
+     return redirect('/dashboard/role/data')->with('alert-success','Data telah terhapus');
 
  }
+
 
 
  function pengaturan(){
