@@ -585,7 +585,7 @@ function cetak_rujukan($id){
     $cek_admin=Admin::where('level',1)->count();
     $cek_kapus=Admin::where('level',2)->count();
 
-    if($cek_admin < 3 && $cek_kapus < 1){
+    if($cek_admin < 3 || $cek_kapus < 1){
         if($request->role == 1){
             Admin::insert([
                 'username' => $request->username,
@@ -593,6 +593,8 @@ function cetak_rujukan($id){
                 'level' => 1,
                 'status' => 1,
             ]);
+     return redirect('/dashboard/role/data')->with('alert-success','data telah berhasil ditambahkan');
+
          }elseif($request->role == 2){
         Admin::insert([
              'username' => $request->username,
